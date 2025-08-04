@@ -1,0 +1,173 @@
+/* Custom CSS for Portfolio */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation styles */
+.nav-link {
+    @apply text-gray-600 hover:text-primary transition-colors duration-300 font-medium;
+}
+
+.nav-link:hover {
+    color: #3B82F6;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 inline-block font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1;
+}
+
+.btn-secondary {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 inline-block font-medium;
+}
+
+/* Section title */
+.section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900;
+}
+
+/* Skill card animations */
+.skill-card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Timeline styles */
+.timeline-item {
+    @apply relative pl-8 pb-8;
+}
+
+.timeline-item::before {
+    content: '';
+    @apply absolute left-0 top-2 w-4 h-4 bg-primary rounded-full;
+}
+
+.timeline-item::after {
+    content: '';
+    @apply absolute left-2 top-6 w-0.5 bg-gray-200;
+    height: calc(100% - 1rem);
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* Project card styles */
+.project-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Contact info styles */
+.contact-item {
+    @apply flex items-center space-x-3 text-gray-600;
+}
+
+.contact-item i {
+    @apply text-primary w-5;
+}
+
+/* Social link styles */
+.social-link {
+    @apply w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading animation */
+.loading {
+    @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Tech stack tags */
+.tech-tag {
+    @apply inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm mr-2 mb-2;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        @apply text-2xl mb-8;
+    }
+    
+    .timeline-item {
+        @apply pl-6;
+    }
+    
+    .timeline-item::before {
+        @apply w-3 h-3 left-0;
+    }
+    
+    .timeline-item::after {
+        @apply left-1.5;
+    }
+}
+
+/* Custom animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+}
+
+/* Form focus styles */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #3B82F6, #10B981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Profile image hover effect */
+#profile-image {
+    transition: transform 0.3s ease;
+}
+
+#profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Success message styles */
+.success-message {
+    @apply bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4;
+}
+
+.error-message {
+    @apply bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4;
+}
